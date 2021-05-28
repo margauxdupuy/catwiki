@@ -1,0 +1,6 @@
+env/
+app/__pycache__
+catwiki/static_src/node_modules
+catwiki/__pycache__
+
+local_settings.py
