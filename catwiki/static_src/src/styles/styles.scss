@@ -14,7 +14,8 @@ body {
 }
 
 input[type=button], input[type=submit], input[type=reset] {
-  cursor: pointer;
+    cursor: pointer;
+    @apply bg-gray;
 }
 
 .section-search {
@@ -36,7 +37,8 @@ input[type=button], input[type=submit], input[type=reset] {
     }
 
     select {
-        width: 300px;
+        width: 250px;
+        @apply bg-white;
     }
 
 }
@@ -62,19 +64,24 @@ input[type=button], input[type=submit], input[type=reset] {
             content: '';
             position: absolute;
             top: 25px;
-            left: -15px;
+            left: 15px;
             width: 30px;
             height: 200px;
             display: block;
             z-index: -1;
 
             @apply rounded-3xl bg-primary;
+
+            @media (min-width: $screen-md-min) {
+                left: -15px;
+            }
         }
+
+
     }
 }
 
 .section-skills {
-
     .skill-bars {
         div {
             content: "";
@@ -108,20 +115,17 @@ input[type=button], input[type=submit], input[type=reset] {
         }
     }
 
-
     .skill-3 {
         .bar-1, .bar-2, .bar-3 {
             @apply bg-secondary;
         }
     }
 
-
     .skill-4 {
         .bar-1, .bar-2, .bar-3, .bar-4 {
             @apply bg-secondary;
         }
     }
-
 
     .skill-5 {
         .bar-1, .bar-2, .bar-3, .bar-4, .bar-5 {

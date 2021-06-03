@@ -6,22 +6,14 @@
 <body class="bg-grey-lightest font-serif leading-normal tracking-normal">
 
     <div class="container mx-auto">
-        <section class="section-search flex flex-col">
+        <section class="section-search flex flex-col text-center md:text-left">
             <h1 class="hidden">Catwiki</h1>
             <img src="{% static 'images/CatwikiLogo_white.svg' %}" alt="Catwiki Logo" style="width: 300px; height: auto;" />
             <p class="text-white my-4">Get to know more about your cat breed</p>
             <form action="/" method="post" class="mt-4">
                 {% csrf_token %}
                 {{ form }}
-
-{#                <label for="input_breeds" class="hidden">Choose your breed</label>#}
-{#                <input list="breed_list" id="input_breeds" name="breeds" placeholder="Enter your breed" class="mr-2"/>#}
-{#                <datalist id="breed_list">#}
-{#                    {% for breed in breeds %}#}
-{#                        <option id="breed_id" value={{ breed.id }}>#}
-{#                    {% endfor %}#}
-{#                </datalist>#}
-                <input type="submit" value="Discover 🐱 → " class="text-sm">
+                <input type="submit" value="Discover 🐱 → " class="text-sm mt-6 md:mt-0">
             </form>
         </section>
 
@@ -36,7 +28,7 @@
                 {% for id, cat in most_searched.items %}
                     <div class="img-card mb-12 md:mb-0">
                         <a href="{% url 'catwiki:detail' id %}">
-                            <img src="{{ cat.image_url }}" alt="{{ cat.name }}" class="rounded-3xl w-full object-cover mb-4 md:mb-6 image-square"/>
+                            <img src="{{ cat.image_url }}" alt="{{ cat.name }}" class="rounded-3xl w-full object-cover mx-auto sm:mx-0 mb-4 md:mb-6 image-square"/>
                             <div class="text-center md:text-left">{{ cat.name }}</div>
                         </a>
                     </div>
